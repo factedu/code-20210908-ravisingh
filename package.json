@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "node js based medical api as poc",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/factedu/code-20210908-ravisingh/issues"
   },
-  "homepage": "https://github.com/factedu/code-20210908-ravisingh#readme"
+  "homepage": "https://github.com/factedu/code-20210908-ravisingh#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  }
 }
