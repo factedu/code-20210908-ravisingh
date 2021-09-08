@@ -1,0 +1,23 @@
+{
+  "name": "medbmi-poc",
+  "version": "1.0.0",
+  "description": "node js based medical api as poc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/factedu/code-20210908-ravisingh.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Ravi Shanker Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/factedu/code-20210908-ravisingh/issues"
+  },
+  "homepage": "https://github.com/factedu/code-20210908-ravisingh#readme"
+}
