@@ -1,13 +1,13 @@
-import express from 'express'
-import swaggerJSDoc from 'swagger-jsdoc'
-import swaggerUi from 'swagger-ui-express'
+const express = require('express')
+const swaggerJSDoc = require('swagger-jsdoc')
+const swaggerUi = require('swagger-ui-express')
 const app = express()
 const port = 3000
 
 /**
  * Routers
  */
-import reportRouter from "./src/routes/report.router.js";
+const reportRouter =require("./src/routes/report.router.js");
 
 const options = {
     definition: {
@@ -46,5 +46,5 @@ app.get('/', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`)
+    console.log(`App listening at http://localhost:${port}`);
 })
