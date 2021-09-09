@@ -25,6 +25,10 @@ const options = {
                 url: `http://localhost:${port}`,
                 description: 'Development server',
             },
+            {
+                url: `https://code-20210908-ravisingh.herokuapp.com`,
+                description: 'Production server',
+            },
         ],
     },
     apis: ['./src/routes/*.js'], // files containing annotations as above
