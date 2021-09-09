@@ -4,7 +4,7 @@ Simple API to report BMI and Health Risk of Patients [POC-Repo]
 # API Endpoint
 https://code-20210908-ravisingh.herokuapp.com/api/reports/overweight
 
-# Developmet Env Setup
+# Development Env Setup
 ```
 git clone git@github.com:factedu/code-20210908-ravisingh.git
 # Cd into code-20210908-ravisingh
@@ -39,7 +39,7 @@ This app uses heroku pipeline for CI/CD anything pushed to main branch will be d
 https://code-20210908-ravisingh.herokuapp.com/api [API Endpoint]
 
 ## Documentation of api
-Intracting Swagger based API Document can be found at
+Intractive Swagger based API Document can be found at don't forget to select production server when testing live. for development selected default is ok.
 https://code-20210908-ravisingh.herokuapp.com/docs
 
 ## Deveoper Contact
