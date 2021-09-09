@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "node js based medical api as poc",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
+    "db:migrate": "knex migrate:latest",
+    "db:seed": "knex seed:run",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch",
+    "md-docs": "swagger-markdown -i docs/report.yaml"
   },
   "repository": {
     "type": "git",
@@ -23,8 +26,20 @@
   },
   "homepage": "https://github.com/factedu/code-20210908-ravisingh#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "g": "^2.0.1",
+    "knex": "^0.95.11",
+    "sqlite3": "^5.0.2",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "jest": "^27.1.1",
+    "swagger-markdown": "^1.4.3",
+    "knex": "^0.95.11"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }

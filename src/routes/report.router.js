@@ -1,4 +1,5 @@
-import express from 'express'
+const express = require('express');
+const { getAllPerson, getReport } = require('../models/person');
 
 const router = express.Router();
 
@@ -30,8 +31,67 @@ const router = express.Router();
  *                         description: The user's name.
  *                         example: Leanne Graham
  */
-router.get('/', (req, res) => {
-    res.status(200).json({message:'Hi from api'})
+router.get('/', async(request, response) => {
+    try {
+        const person = await getAllPerson();
+        response.status(200).json(person);
+    } catch (error) {
+        response.status(500).json({error});
+    }
 })
 
-export default router;
+/**
+ * @swagger
+ * /api/reports/overweight:
+ *   get:
+ *     summary: Retrieve a list overweight people.
+ *     description: This open api is use to get the list of overweight people
+ *     responses:
+ *       200:
+ *         description: A list of people.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         description: The doc ID.
+ *                         example: 0
+ *                       Gender:
+ *                         type: string
+ *                         description: The gender of person.
+ *                         example: Leanne Graham
+ *                       HeightCm:
+ *                         type: integer
+ *                         description: The height of personin Cm.
+ *                         example: 171
+ *                       WeightKg:
+ *                         type: integer
+ *                         description: The weight of person in Kg.
+ *                         example: 77
+ *                       bmiCategory:
+ *                         type: string
+ *                         description: BMI Category of person.
+ *                         example: Overweight
+ *                       healthRisk:
+ *                         type: string
+ *                         description: Level of health risk the person is in.
+ *                         example: Enhanced Risk
+ */
+router.get('/overweight',async(request,response)=>{
+    try {
+        const person = await getReport();
+        response.status(200).json(person);
+    } catch (error) {
+        response.status(500).json({ error });
+    }
+})
+
+
+module.exports = router;
