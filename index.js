@@ -1,6 +1,7 @@
 const express = require('express')
 const swaggerJSDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
+var cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000;
 
@@ -35,6 +36,9 @@ const options = {
 };
 
 const swaggerSpec = swaggerJSDoc(options);
+
+//enable cors for all domain
+app.use(cors())
 
 app.use('/docs',swaggerUi.serve,swaggerUi.setup(swaggerSpec));
 app.use(express.urlencoded({extended:true}));
